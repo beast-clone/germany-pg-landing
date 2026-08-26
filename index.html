@@ -82,13 +82,13 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        brand:  '#106AD9',
-        brandDeep:'#0B4E9E',
-        brandOnDark:'#5FA3F2',
-        ink:    '#1E293B',
-        body:   '#555555',
-        paper:  '#F6F6F6',
-        line:   '#E2E5EA'
+        brand:  '#DD0000',
+        brandDeep:'#B00000',
+        gold:   '#FFCE00',
+        ink:    '#111111',
+        body:   '#4A4A4A',
+        paper:  '#F4F2ED',
+        line:   '#E0DDD4'
       },
       fontFamily: { sans: ['Geist', 'system-ui', 'sans-serif'] },
       borderRadius: { card: '10px', pill: '100px' },
@@ -105,7 +105,7 @@ tailwind.config = {
 
   /* Hospic runs its display type heavy and tightly tracked — 80/600/-1.6px on
      the h1, 48/600/-0.96px on section heads. */
-  h1,h2,h3 { color:#1E293B; font-weight:600 !important; }
+  h1,h2,h3 { color:#111111; font-weight:600 !important; }
   .t-h1 { font-size:clamp(2.75rem,1.6rem + 4.8vw,5rem); line-height:1.0; letter-spacing:-.02em; }
   .t-h2 { font-size:clamp(1.875rem,1.2rem + 2.8vw,3rem); line-height:1.1; letter-spacing:-.02em; }
   .t-h3 { font-size:1.25rem; line-height:1.35; letter-spacing:-.02em; }
@@ -115,43 +115,43 @@ tailwind.config = {
   .btn { display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
          border-radius:100px; padding:.9rem .9rem .9rem 1.5rem; font-size:.9375rem;
          font-weight:500; line-height:1.2; transition:background-color .18s ease, color .18s ease; }
-  .btn-primary { background:#106AD9; color:#fff; }
-  .btn-primary:hover { background:#0B4E9E; }
-  .btn-light { background:#fff; color:#1E293B; }
-  .btn-light:hover { background:#F6F6F6; }
+  .btn-primary { background:#DD0000; color:#fff; }
+  .btn-primary:hover { background:#B00000; }
+  .btn-light { background:#fff; color:#111111; }
+  .btn-light:hover { background:#F4F2ED; }
   .btn-outline { border:1px solid rgba(255,255,255,.45); color:#fff; padding:.9rem 1.5rem; }
   .btn-outline:hover { background:rgba(255,255,255,.12); }
-  .btn:focus-visible { outline:2px solid #106AD9; outline-offset:3px; }
+  .btn:focus-visible { outline:2px solid #DD0000; outline-offset:3px; }
   .nub { display:grid; place-items:center; width:30px; height:30px; border-radius:50%;
          background:rgba(255,255,255,.22); flex:none; }
-  .btn-light .nub { background:#106AD9; color:#fff; }
+  .btn-light .nub { background:#DD0000; color:#fff; }
 
-  .card { background:#fff; border:1px solid #E2E5EA; border-radius:10px; }
+  .card { background:#fff; border:1px solid #E0DDD4; border-radius:10px; }
 
   /* Full-bleed photographic hero with a dark scrim, per the reference. The
      gradient is weighted left so the headline keeps contrast over the image. */
-  .hero { position:relative; background:#1E293B; }
+  .hero { position:relative; background:#111111; }
   .hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   .hero-scrim { position:absolute; inset:0;
-    background:linear-gradient(90deg, rgba(15,23,42,.92) 0%, rgba(15,23,42,.80) 42%, rgba(15,23,42,.42) 100%); }
+    background:linear-gradient(90deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.80) 42%, rgba(10,10,10,.42) 100%); }
 
   .eyebrow-rule { display:flex; align-items:center; gap:.75rem; font-size:.8125rem;
-                  font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#106AD9; }
-  .eyebrow-rule::after { content:''; flex:1; height:1px; background:#E2E5EA; }
+                  font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#DD0000; }
+  .eyebrow-rule::after { content:''; flex:1; height:1px; background:#E0DDD4; }
 
   /* Pathway timeline: a single rule with numbered nodes hanging off it. */
   .step { position:relative; padding-left:76px; }
-  .step::before { content:''; position:absolute; left:23px; top:52px; bottom:-40px; width:1px; background:#E2E5EA; }
+  .step::before { content:''; position:absolute; left:23px; top:52px; bottom:-40px; width:1px; background:#E0DDD4; }
   .step:last-child::before { display:none; }
   .num { position:absolute; left:0; top:0; width:48px; height:48px; border-radius:50%;
-         display:grid; place-items:center; background:#106AD9; color:#fff;
+         display:grid; place-items:center; background:#DD0000; color:#fff;
          font-size:.9375rem; font-weight:600; }
   @media (max-width:639px){
     .step { padding-left:0; padding-top:64px; }
     .step::before { display:none; }
   }
 
-  .rule { border-top:1px solid #E2E5EA; }
+  .rule { border-top:1px solid #E0DDD4; }
 
   /* Reveals. [data-reveal] carries no hidden resting state, so a blocked
      script can never strand content invisible. Both keyframe stops are
@@ -186,7 +186,7 @@ tailwind.config = {
       <span class="nub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
     </a>
     <button id="navToggle" class="grid h-11 w-11 place-items-center rounded-card bg-paper lg:hidden" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E293B" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
   <div id="mobileMenu" class="hidden lg:hidden">
@@ -419,7 +419,7 @@ tailwind.config = {
     </div>
 
     <div data-reveal class="mt-14 rounded-card bg-ink p-8 lg:p-10">
-      <p class="text-[13px] font-medium uppercase tracking-[.14em] text-brandOnDark">Final milestone</p>
+      <p class="text-[13px] font-medium uppercase tracking-[.14em] text-gold">Final milestone</p>
       <p class="mt-4 text-[1.0625rem] leading-relaxed text-white/85">
         Approbation &rarr; Permanent Licence &rarr; PG &rarr; Facharzt Title. Exact Approbation timelines are set by the state (Bundesland) handling your case — your counsellor will confirm the specific window for your file.
       </p>
@@ -589,7 +589,7 @@ tailwind.config = {
     <div data-reveal class="overflow-hidden rounded-card bg-ink">
       <div class="grid lg:grid-cols-[1.1fr_.9fr]">
         <div class="p-9 lg:p-14">
-          <p class="text-[13px] font-medium uppercase tracking-[.14em] text-brandOnDark">Start your journey</p>
+          <p class="text-[13px] font-medium uppercase tracking-[.14em] text-gold">Start your journey</p>
           <h2 class="t-h2 mt-5 !text-white">Start your journey to Germany today</h2>
           <p class="mt-6 max-w-[36rem] text-[1.0625rem] leading-relaxed text-white/75">
             Speak with our counsellors for an honest assessment of your profile and a clear picture of what the Germany pathway involves.
@@ -601,11 +601,11 @@ tailwind.config = {
         <div class="border-t border-white/10 p-9 lg:border-l lg:border-t-0 lg:p-14">
           <address class="not-italic">
             <p class="text-[13px] font-medium uppercase tracking-[.14em] text-white/50">Phone</p>
-            <p class="mt-2"><a href="tel:+918041743956" class="inline-flex min-h-[44px] items-center text-[1.0625rem] font-medium text-white hover:text-brandOnDark">080 4174 3956</a></p>
+            <p class="mt-2"><a href="tel:+918041743956" class="inline-flex min-h-[44px] items-center text-[1.0625rem] font-medium text-white hover:text-gold">080 4174 3956</a></p>
             <p class="mt-6 text-[13px] font-medium uppercase tracking-[.14em] text-white/50">Email</p>
-            <p class="mt-2"><a href="mailto:info@goocampus.in" class="inline-flex min-h-[44px] items-center text-[1.0625rem] font-medium text-white hover:text-brandOnDark">info@goocampus.in</a></p>
+            <p class="mt-2"><a href="mailto:info@goocampus.in" class="inline-flex min-h-[44px] items-center text-[1.0625rem] font-medium text-white hover:text-gold">info@goocampus.in</a></p>
             <p class="mt-6 text-[13px] font-medium uppercase tracking-[.14em] text-white/50">Web</p>
-            <p class="mt-2"><a href="https://goocampusworld.com" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-[1.0625rem] font-medium text-white hover:text-brandOnDark">goocampusworld.com</a></p>
+            <p class="mt-2"><a href="https://goocampusworld.com" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-[1.0625rem] font-medium text-white hover:text-gold">goocampusworld.com</a></p>
             <p class="mt-6 text-[13px] font-medium uppercase tracking-[.14em] text-white/50">Office</p>
             <p class="mt-2 text-[15px] leading-relaxed text-white/75">138/6, Ground Floor, 10th Main Road,<br />6th-A Cross, Sadashivanagar, near SBI Bank,<br />Raj Mahal Vilas Extension,<br />Bengaluru, Karnataka 560080</p>
           </address>
